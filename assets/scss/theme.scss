@@ -1,0 +1,136 @@
+
+@import
+'font',
+'mixins',
+'variables';
+
+*{
+    box-sizing: border-box;
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-family: $font-family;
+    background: url('../media/pattern-background-desktop.svg') no-repeat;
+    background-size: contain;
+    background-color: #E0E8FF;
+}
+a[href] {
+    text-decoration: none;
+}
+.os {
+    &-container {
+        width: 100%;
+        max-width: 1340px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    &-box {
+        width: 450px;
+        background: #fff;
+        max-width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        &img {
+            width: 100%;
+        }
+        &info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 45px;
+            @include responsive(376px) {
+                padding: 35px 25px 15px;
+            }
+        }
+        &title {
+            margin: 0;
+            color: $color-darkblue;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 900;
+            @include responsive(376px) {
+                font-size: 24px;
+            }
+        }
+        &text {
+            text-align: center;
+            color: #888DA1;
+            font-size: 17px;
+            line-height: 26px;
+            margin: 0;
+            font-weight: 500;
+            @include responsive(376px) {
+                font-size: 16px;
+            }
+        }
+        &btn {
+            background: $color-primary-bright;
+            display: block;
+            line-height: 49px;
+            width: 100%;
+            border-radius: 5px;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all linear 0.2s;
+            &:hover {
+                background: #766CF1;
+            }
+            &.cancel {
+                background: transparent;
+                color: #888DA1;
+                margin-top: 10px;
+                &:hover {
+                    color: $color-darkblue;
+                }
+            }
+        }
+        
+        &plan {
+            display: flex;
+            align-items: center;
+            margin: 35px 0 45px;
+            
+            &-info {
+                margin: 20px;
+                width: 160px;
+                @include responsive(376px) {
+                   width: auto;
+                   flex: 1;
+                   margin-right: 35px;
+                }
+            }
+            &-name {
+                display: block;
+                color: $color-darkblue;
+                margin-bottom: 5px;
+            }
+            &-cost {
+                color: #888DA1;
+                font-size: 14px;
+            }
+            &-action {
+                font-size: 14px;
+                color: $color-primary-bright;
+                text-decoration: underline;
+                font-weight: 700;
+            }
+        }
+    }
+}
